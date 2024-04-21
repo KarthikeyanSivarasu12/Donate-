@@ -70,7 +70,7 @@ export default function Search() {
     if (
       e.target.id === 'all' ||
       e.target.id === 'rent' ||
-      e.target.id === 'sale'
+      e.target.id === 'NGO'
     ) {
       setSidebardata({ ...sidebardata, type: e.target.id });
     }
@@ -146,7 +146,7 @@ export default function Search() {
           </div>
           <div className='flex gap-2 flex-wrap items-center'>
             <label className='font-semibold'>Type:</label>
-            <div className='flex gap-2'>
+            {/* <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='all'
@@ -154,8 +154,8 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.type === 'all'}
               />
-              <span>Rent & Sale</span>
-            </div>
+              <span>NGO</span>
+            </div> */}
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -164,19 +164,19 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.type === 'rent'}
               />
-              <span>Rent</span>
+              <span>Individual</span>
             </div>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
-                id='sale'
+                id='NGO'
                 className='w-5'
                 onChange={handleChange}
-                checked={sidebardata.type === 'sale'}
+                checked={sidebardata.type === 'NGO'}
               />
-              <span>Sale</span>
+              <span>NGO</span>
             </div>
-            <div className='flex gap-2'>
+            {/* <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='offer'
@@ -185,7 +185,7 @@ export default function Search() {
                 checked={sidebardata.offer}
               />
               <span>Offer</span>
-            </div>
+            </div> */}
           </div>
           <div className='flex gap-2 flex-wrap items-center'>
             <label className='font-semibold'>Amenities:</label>
@@ -197,8 +197,8 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.parking}
               />
-              <span>Parking</span>
-            </div>
+              <span>Trust</span>
+             </div>{/*
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -208,7 +208,7 @@ export default function Search() {
                 checked={sidebardata.furnished}
               />
               <span>Furnished</span>
-            </div>
+            </div> */}
           </div>
           <div className='flex items-center gap-2'>
             <label className='font-semibold'>Sort:</label>

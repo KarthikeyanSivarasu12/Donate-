@@ -93,7 +93,7 @@ export default function CreateListing() {
   };
 
   const handleChange = (e) => {
-    if (e.target.id === 'sale' || e.target.id === 'rent') {
+    if (e.target.id === 'NGO' || e.target.id === 'rent') {
       setFormData({
         ...formData,
         type: e.target.id,
@@ -128,8 +128,8 @@ export default function CreateListing() {
     try {
       if (formData.imageUrls.length < 1)
         return setError('You must upload at least one image');
-      if (+formData.regularPrice < +formData.discountPrice)
-        return setError('Discount price must be lower than regular price');
+      // if (+formData.regularPrice < +formData.discountPrice)
+      //   return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
       const res = await fetch('/api/listing/create', {
@@ -193,12 +193,12 @@ export default function CreateListing() {
             <div className='flex gap-2'>
               <input
                 type='checkbox'
-                id='sale'
+                id='NGO'
                 className='w-5'
                 onChange={handleChange}
-                checked={formData.type === 'sale'}
+                checked={formData.type === 'NGO'}
               />
-              <span>Sell</span>
+              <span>NGO</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -208,7 +208,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.type === 'rent'}
               />
-              <span>Rent</span>
+              <span>Individual</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -218,9 +218,9 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.parking}
               />
-              <span>Parking spot</span>
+              <span>Trust</span>
             </div>
-            <div className='flex gap-2'>
+            {/* <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='furnished'
@@ -229,8 +229,8 @@ export default function CreateListing() {
                 checked={formData.furnished}
               />
               <span>Furnished</span>
-            </div>
-            <div className='flex gap-2'>
+            </div> */}
+            {/* <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='offer'
@@ -239,7 +239,7 @@ export default function CreateListing() {
                 checked={formData.offer}
               />
               <span>Offer</span>
-            </div>
+            </div> */}
           </div>
           <div className='flex flex-wrap gap-6'>
             <div className='flex items-center gap-2'>
@@ -253,7 +253,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
-              <p>Beds</p>
+              <p>Quantity</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -266,9 +266,9 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
-              <p>Baths</p>
+              <p>Date</p>
             </div>
-            <div className='flex items-center gap-2'>
+            {/* <div className='flex items-center gap-2'>
               <input
                 type='number'
                 id='regularPrice'
@@ -285,7 +285,7 @@ export default function CreateListing() {
                   <span className='text-xs'>($ / month)</span>
                 )}
               </div>
-            </div>
+            </div> */}
             {formData.offer && (
               <div className='flex items-center gap-2'>
                 <input
