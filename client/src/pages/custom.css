@@ -1,0 +1,14 @@
+/* tailwind.css or your custom.css */
+@keyframes slideLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slide-left {
+    animation: slideLeft 5s ease-in-out infinite;
+  }
+  
